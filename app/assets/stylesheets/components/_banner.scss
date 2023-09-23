@@ -1,0 +1,30 @@
+.banner {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin-top: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 64px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  font-family: 'parisienne', serif;
+}
+
+.banner p {
+  font-size: 24px;
+  color: white;
+  opacity: 0.8;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+  margin-left: 0;
+  position: absolute;
+  left: 30px;
+  font-family: 'mali', serif;
+}

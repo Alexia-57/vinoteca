@@ -10,3 +10,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Parisienne&family=Satisfy&display=swap');
+
+// common behaviors
+
+body.body-homepage {
+  background-color: #3d2832;
+  background-image: none;
+  color: #e4dde3;
+}
