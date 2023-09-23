@@ -5,3 +5,29 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Wine.create(
+  name: 'Sample Wine 1',
+  type: 'Red',
+  region: 'Napa Valley',
+  winery: 'Sample Winery 1',
+  variety: 'Cabernet Sauvignon',
+  year: 2019,
+  quantity: 5,
+  rating: 4,
+  comment: 'A great wine for special occasions.',
+  empty: false
+)
+
+Wine.create(
+  name: 'Sample Wine 2',
+  type: 'White',
+  region: 'Bordeaux',
+  winery: 'Sample Winery 2',
+  variety: 'Chardonnay',
+  year: 2020,
+  quantity: 3,
+  rating: 3,
+  comment: 'Light and refreshing.',
+  empty: false
+)
