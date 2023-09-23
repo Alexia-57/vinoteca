@@ -8,7 +8,7 @@
 
 Wine.create(
   name: 'Sample Wine 1',
-  type: 'Red',
+  wine_type: 'Red',
   region: 'Napa Valley',
   winery: 'Sample Winery 1',
   variety: 'Cabernet Sauvignon',
@@ -21,13 +21,26 @@ Wine.create(
 
 Wine.create(
   name: 'Sample Wine 2',
-  type: 'White',
+  wine_type: 'White',
   region: 'Bordeaux',
   winery: 'Sample Winery 2',
   variety: 'Chardonnay',
   year: 2020,
   quantity: 3,
   rating: 3,
+  comment: 'Light and refreshing.',
+  empty: false
+)
+
+Wine.create(
+  name: 'Sample Wine 3',
+  wine_type: 'Red',
+  region: 'Bourgogne',
+  winery: 'Sample Winery 3',
+  variety: 'Pinot Noir',
+  year: 2018,
+  quantity: 1,
+  rating: 4.5,
   comment: 'Light and refreshing.',
   empty: false
 )
