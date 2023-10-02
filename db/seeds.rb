@@ -6,6 +6,14 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+puts "Destroying existing records of Wines..."
+
+Wine.destroy_all # if Rails.env.development?
+
+puts "Done deleting.."
+
+puts "Creating new wines..."
+
 Wine.create(
   name: 'Château Abc',
   wine_type: 'Rouge',
