@@ -1,6 +1,8 @@
-<div class="banner" style="background-image: url(<%= image_path('banner.jpg') %>)">
-  <div class="container">
-    <h1 class="text-center">Vinoteca</h1>
-    <p>Ma cave à vins personnalisée</p>
+<% if controller_name == "pages" && action_name == "home" %>
+  <div class="banner" style="background-image: url(<%= image_path('banner.jpg') %>)">
+    <div class="container">
+      <h1 class="text-center">Vinoteca</h1>
+      <p>Ma cave à vins personnalisée</p>
+    </div>
   </div>
-</div>
+<% end %>

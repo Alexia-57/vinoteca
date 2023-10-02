@@ -5,12 +5,14 @@
   <div class="home-grid mt-5 d-flex flex-wrap">
     <% if @wines.any? %>
       <% @wines.each do |wine| %>
-        <a href="<%= wine_path(wine.id) %>" class="card-reco">
-          <div class="card-reco-body">
-            <div class="card-text">
-              <p class="responsive-truncate"><%= wine.name %></p>
-              <p class="date"><%= wine.created_at.strftime('%Y-%m-%d') %></p>
-            </div>
+        <a href="<%= wine_path(wine.id) %>" class="card-index">
+          <div class="card-index-body">
+            <p><%= wine.name %></p>
+            <p><%= wine.wine_type %></p>
+            <p><%= wine.region %></p>
+            <p><%= wine.winery %></p>
+            <p><%= wine.variety %></p>
+            <p><%= wine.year %></p>
           </div>
         </a>
       <% end %>

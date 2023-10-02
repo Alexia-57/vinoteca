@@ -10,13 +10,31 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/cards";
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Parisienne&family=Satisfy&display=swap');
 
 // common behaviors
 
 body.body-homepage {
-  background-color: #3d2832;
+  background-color: #2e1c20;
   background-image: none;
   color: #e4dde3;
+}
+
+body {
+  background-color: #3d2832;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/background5.jpg');
+  color: #e4dde3;
+  background-size: cover; /* Cover the width */
+  background-size: 100% auto; /* Maintain aspect ratio for the height */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h2 {
+  font-family: 'parisienne', serif;
+  color: #ffff;
+  text-align: center;
+  font-size: 36px;
 }
