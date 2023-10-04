@@ -12,6 +12,15 @@ Wine.destroy_all # if Rails.env.development?
 
 puts "Done deleting.."
 
+# Find or create users
+user1 = User.find_or_create_by(email: 'alexia@example.com') do |user|
+  user.encrypted_password = 'password1'
+end
+
+user2 = User.find_or_create_by(email: 'user2@example.com') do |user|
+  user.encrypted_password = 'password2'
+end
+
 puts "Creating new wines..."
 
 Wine.create(
@@ -25,7 +34,8 @@ Wine.create(
   quantity: 2,
   rating: 2.5,
   comment: 'Vin un peu acide',
-  empty: false
+  empty: false,
+  user_id: user1.id
 )
 
 Wine.create(
@@ -39,7 +49,8 @@ Wine.create(
   quantity: 3,
   rating: 3.5,
   comment: 'Très fruité',
-  empty: false
+  empty: false,
+  user_id: user1.id
 )
 
 Wine.create(
@@ -53,5 +64,6 @@ Wine.create(
   quantity: 1,
   rating: 4.5,
   comment: 'Accompagne bien les fruits de mer',
-  empty: false
+  empty: false,
+  user_id: user1.id
 )
