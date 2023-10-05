@@ -1,3 +1,9 @@
+.home-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Horizontally center the cards */
+}
+
 .card-index {
   border-radius: 5px;
   width: 280px;
