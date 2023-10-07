@@ -4,42 +4,44 @@
   </div>
   <div class="row justify-content-center">
     <div class="col-sm-8 my-3 custom-margin-bottom">
-      <div class="rounded-border-search" style="border-radius: 25px;">
-        <%= form_with url: wines_path, method: :get, class: "d-flex" do %>
-          <div class="input-group">
-            <%= text_field_tag :query,
-              params[:query],
-              class: "border-0 bg-white form-control",
-              placeholder: "chercher...",
-              style: "border-radius: 25px;"
-            %>
-            <div class="input-group-append">
-              <%= link_to wines_path(query: params[:query]), class: "border-0 bg-transparent input-group-text icon-link" do %>
-                <i class="fa-solid fa-magnifying-glass"></i>
-              <% end %>
+      <div class="search-bar-and-icon">
+        <div class="rounded-border-search" style="border-radius: 25px;">
+          <%= form_with url: wines_path, method: :get, class: "d-flex" do %>
+            <div class="input-group">
+              <%= text_field_tag :query,
+                params[:query],
+                class: "border-0 bg-white form-control",
+                placeholder: "chercher...",
+                style: "border-radius: 25px;"
+              %>
+              <div class="d-flex align-items-center" style="position: absolute; right: 0; top: 4px;">
+                <%= link_to wines_path(query: params[:query]), class: "border-0 bg-transparent input-group-text icon-link" do %>
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                <% end %>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="home-grid mt-5 d-flex flex-wrap">
-    <% if @wines.any? %>
-      <% @wines.each do |wine| %>
-        <a href="<%= wine_path(wine.id) %>" class="card-index">
-          <div class="card-index-body">
-            <p><%= wine.name %></p>
-            <p><%= wine.wine_type %></p>
-            <p><%= wine.country %></p>
-            <p><%= wine.region %></p>
-            <p><%= wine.winery %></p>
-            <p><%= wine.variety %></p>
-            <p><%= wine.year %></p>
-          </div>
-        </a>
+    <div class="home-grid mt-5 d-flex flex-wrap">
+      <% if @wines.any? %>
+        <% @wines.each do |wine| %>
+          <a href="<%= wine_path(wine.id) %>" class="card-index">
+            <div class="card-index-body">
+              <p><%= wine.name %></p>
+              <p><%= wine.wine_type %></p>
+              <p><%= wine.country %></p>
+              <p><%= wine.region %></p>
+              <p><%= wine.winery %></p>
+              <p><%= wine.variety %></p>
+              <p><%= wine.year %></p>
+            </div>
+          </a>
+        <% end %>
+      <% else %>
+        <p>Vous n'avez pas encore ajouté de vin</p>
       <% end %>
-    <% else %>
-      <p>Vous n'avez pas encore ajouté de vin</p>
-    <% end %>
+    </div>
   </div>
 </div>
