@@ -29,7 +29,7 @@ Wine.create(
   region: 'Nagano',
   winery: 'St Cousair',
   variety: 'Cabernet Sauvignon',
-  country: 'Japan',
+  country: 'Japon',
   year: 2019,
   quantity: 2,
   rating: 2.5,
