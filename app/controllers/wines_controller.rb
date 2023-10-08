@@ -1,7 +1,5 @@
 class WinesController < ApplicationController
-  def new
-    @wine = Wine.new
-  end
+ #new method is in pages controller, since the form is on homepage
 
   def create
     @wine = Wine.new(wine_params)

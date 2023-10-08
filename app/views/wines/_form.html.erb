@@ -1,7 +1,7 @@
-<%= simple_form_for(wine) do |f| %>
+<%= simple_form_for(@wine) do |f| %>
   <%= f.input :name %>
   <%= f.input :wine_type %>
-  <%= f.input :country %>
+  <%= f.input :country, as: :country %>
   <%= f.input :region %>
   <%= f.input :winery %>
   <%= f.input :variety %>
