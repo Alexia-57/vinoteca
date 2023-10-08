@@ -1,0 +1,14 @@
+<%= simple_form_for(wine) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :wine_type %>
+  <%= f.input :country %>
+  <%= f.input :region %>
+  <%= f.input :winery %>
+  <%= f.input :variety %>
+  <%= f.input :year, input_html: { type: :number } %>
+  <%= f.input :quantity, input_html: { type: :number } %>
+  <%= f.input :rating, input_html: { type: :number, step: 0.1, min: 0, max: 5 } %>
+  <%= f.input :empty, as: :boolean %>
+  <%= f.input :comment %>
+  <%= f.submit %>
+<% end %>
