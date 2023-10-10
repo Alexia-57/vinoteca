@@ -1,20 +1,19 @@
 <div class="container">
-  <div class="description mt-5">
-    <h2><%= @wine.name %></h2>
-  </div>
   <div class="row justify-content-center">
-    <div class="home-grid mt-3 d-flex flex-wrap">
+    <div class="home-grid mt-3 mb-5 d-flex flex-wrap">
       <div class="card-wine">
         <div class="card-wine-body">
-          <p><b>Type de vin :</b> <%= @wine.wine_type %></p>
-          <p>Pays : <%= @wine.country %></p>
-          <p>Région : <%= @wine.region %></p>
-          <p>Domaine : <%= @wine.winery %></p>
-          <p>Cépage : <%= @wine.variety %></p>
+          <h2><%= @wine.name.capitalize %></h2>
+          <br>
+          <p><b>Type de vin :</b> <%= @wine.wine_type.capitalize %></p>
+          <p>Pays : <%= @wine.country.capitalize %></p>
+          <p>Région : <%= @wine.region.capitalize %></p>
+          <p>Domaine : <%= @wine.winery.capitalize %></p>
+          <p>Cépage : <%= @wine.variety.capitalize %></p>
           <p>Année : <%= @wine.year %></p>
           <p>Quantité : <%= @wine.quantity %></p>
           <p>Note : <%= @wine.rating %></p>
-          <p>Commentaire : <%= @wine.comment %></p>
+          <p>Commentaire : <%= @wine.comment.capitalize %></p>
           <p>Dégusté ? <%= @wine.empty ? 'Oui' : 'Non' %></p>
         </div>
       </div>
