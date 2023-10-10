@@ -1,0 +1,31 @@
+fr:
+  simple_form:
+    labels:
+      defaults:
+        email: "addresse email"
+        password: "Mot de passe"
+        remember_me: "Se souvenir de moi"
+        sign_in: "Se connecter"
+        sign_up: "S'inscrire"
+        sign_out: "Se déconnecter"
+        cancel: "Annuler"
+        edit: "Modifier"
+        update: "Mettre à jour"
+        create: "Créer"
+        new: "Nouveau"
+        edit_model: <<-EOS
+          Modifier %{model}
+          EOS
+
+      wine:
+        name: "Nom"
+        wine_type: "Type de vin"
+        country: "Pays"
+        region: "Région"
+        winery: "Domaine"
+        variety: "Cépage"
+        year: "Année"
+        quantity: "Quantité"
+        rating: "Note"
+        comment: "Commentaire"
+        empty: "Dégusté"
