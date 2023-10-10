@@ -10,7 +10,7 @@
             <%= text_field_tag :query,
               params[:query],
               class: "border-0 bg-white form-control",
-              placeholder: "chercher...",
+              placeholder: "Rechercher...",
               style: "border-radius: 25px;"
             %>
             <div class="input-group-append">
@@ -28,12 +28,12 @@
       <% @wines.each do |wine| %>
         <a href="<%= wine_path(wine.id) %>" class="card-index">
           <div class="card-index-body">
-            <p><b><%= wine.name %></b></p>
-            <p><%= wine.wine_type %></p>
-            <p><%= wine.country %></p>
-            <p><%= wine.region %></p>
-            <p><%= wine.winery %></p>
-            <p><%= wine.variety %></p>
+            <p><b><%= wine.name.capitalize %></b></p>
+            <p><%= wine.wine_type.capitalize %></p>
+            <p><%= wine.country.capitalize %></p>
+            <p><%= wine.region.capitalize %></p>
+            <p><%= wine.winery.capitalize %></p>
+            <p><%= wine.variety.capitalize %></p>
             <p><%= wine.year %></p>
           </div>
         </a>
