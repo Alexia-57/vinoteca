@@ -7,9 +7,11 @@ class WinesController < ApplicationController
 
     if @wine.save
       flash[:notice] = 'Votre vin a été ajouté.'
-      redirect_to @wine
+      redirect_to wine_path(@wine)
     else
-      render :new
+      flash[:alert] = 'un problème est survenu.'
+      # render :new
+      redirect_to new_wine_path
     end
   end
 
@@ -21,7 +23,7 @@ class WinesController < ApplicationController
       @wines = Wine.search_by_details(params[:query])
     else
       # @wines = Wine.all
-      # add .order(created_at: :desc) to display from most recent 1st = decending order based on created_at timetsamps
+      # order(created_at: :desc) is to display most recent first
       @wines = current_user.wines.order(created_at: :desc)
     end
   end

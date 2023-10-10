@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="description mt-5">
+    <h2><% @wine.name %></h2>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3 custom-margin-bottom">
+    </div>
+    <div class="home-grid mt-5 d-flex flex-wrap">
+      <div class="card-index">
+        <div class="card-index-body">
+          <p><%= @wine.name %></p>
+          <p><%= @wine.wine_type %></p>
+          <p><%= @wine.country %></p>
+          <p><%= @wine.region %></p>
+          <p><%= @wine.winery %></p>
+          <p><%= @wine.variety %></p>
+          <p><%= @wine.year %></p>
+          <p><%= @wine.quantity %></p>
+          <p><%= @wine.rating %></p>
+          <p><%= @wine.comment %></p>
+          <p><%= @wine.empty %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
