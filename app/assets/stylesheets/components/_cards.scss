@@ -9,10 +9,14 @@
   width: 280px;
   /* background-color: #d8bea3; */
   background: rgba(94, 67, 67, 0.6);
-  padding: 10px;
   text-decoration: none;
   color: #ffffff;
   margin: 10px;
+}
+
+.card-index-body {
+  padding: 20px;
+  padding-top: 25px;
 }
 
 .card-home {
@@ -22,4 +26,24 @@
   text-decoration: none;
   color: #ffffff;
   margin: 10px;
+}
+
+.card-wine {
+  border-radius: 5px;
+  width: 280px;
+  height: auto;
+  background: rgba(94, 67, 67, 0.6);
+  text-decoration: none;
+  color: #ffffff;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Equal space above and below contents */
+  align-items: center;
+}
+
+.card-wine-body {
+  padding: 20px;
+  padding-top: 32px;
+  text-align: center;
 }
