@@ -1,24 +1,21 @@
 <div class="container">
   <div class="description mt-5">
-    <h2><% @wine.name %></h2>
+    <h2><%= @wine.name %></h2>
   </div>
   <div class="row justify-content-center">
-    <div class="col-sm-8 my-3 custom-margin-bottom">
-    </div>
-    <div class="home-grid mt-5 d-flex flex-wrap">
-      <div class="card-index">
-        <div class="card-index-body">
-          <p><%= @wine.name %></p>
-          <p><%= @wine.wine_type %></p>
-          <p><%= @wine.country %></p>
-          <p><%= @wine.region %></p>
-          <p><%= @wine.winery %></p>
-          <p><%= @wine.variety %></p>
-          <p><%= @wine.year %></p>
-          <p><%= @wine.quantity %></p>
-          <p><%= @wine.rating %></p>
-          <p><%= @wine.comment %></p>
-          <p><%= @wine.empty %></p>
+    <div class="home-grid mt-3 d-flex flex-wrap">
+      <div class="card-wine">
+        <div class="card-wine-body">
+          <p><b>Type de vin :</b> <%= @wine.wine_type %></p>
+          <p>Pays : <%= @wine.country %></p>
+          <p>Région : <%= @wine.region %></p>
+          <p>Domaine : <%= @wine.winery %></p>
+          <p>Cépage : <%= @wine.variety %></p>
+          <p>Année : <%= @wine.year %></p>
+          <p>Quantité : <%= @wine.quantity %></p>
+          <p>Note : <%= @wine.rating %></p>
+          <p>Commentaire : <%= @wine.comment %></p>
+          <p>Dégusté ? <%= @wine.empty ? 'Oui' : 'Non' %></p>
         </div>
       </div>
     </div>

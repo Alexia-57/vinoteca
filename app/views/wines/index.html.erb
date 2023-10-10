@@ -24,23 +24,21 @@
         </div>
       </div>
     </div>
-    <div class="home-grid mt-5 d-flex flex-wrap">
-      <% if @wines.any? %>
-        <% @wines.each do |wine| %>
-          <a href="<%= wine_path(wine.id) %>" class="card-index">
-            <div class="card-index-body">
-              <p><%= wine.name %></p>
-              <p><%= wine.wine_type %></p>
-              <p><%= wine.country %></p>
-              <p><%= wine.region %></p>
-              <p><%= wine.winery %></p>
-              <p><%= wine.variety %></p>
-              <p><%= wine.year %></p>
-            </div>
-          </a>
-        <% end %>
-      <% else %>
-        <p>Vous n'avez pas encore ajouté de vin</p>
+  </div>
+  <div class="home-grid mt-3 d-flex flex-wrap">
+    <% if @wines.any? %>
+      <% @wines.each do |wine| %>
+        <a href="<%= wine_path(wine.id) %>" class="card-index">
+          <div class="card-index-body">
+            <p><b><%= wine.name %></b></p>
+            <p><%= wine.wine_type %></p>
+            <p><%= wine.country %></p>
+            <p><%= wine.region %></p>
+            <p><%= wine.winery %></p>
+            <p><%= wine.variety %></p>
+            <p><%= wine.year %></p>
+          </div>
+        </a>
       <% end %>
     </div>
   </div>
