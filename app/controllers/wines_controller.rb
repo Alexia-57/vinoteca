@@ -55,8 +55,11 @@ class WinesController < ApplicationController
 
   def destroy
     @wine = Wine.find(params[:id])
-    @wine = Wine.destroy
-    flash[:success] = "Votre vin a bien été supprimé"
+    if @wine.destroy
+      flash[:success] = "Votre vin a bien été supprimé"
+    else
+      flash[:error] = "Une erreur s'est produite lors de la suppression du vin"
+    end
     redirect_to wines_path, status: :see_other
   end
 
