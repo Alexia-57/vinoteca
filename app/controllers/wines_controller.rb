@@ -1,15 +1,15 @@
 class WinesController < ApplicationController
- #new method is in pages controller, since the form is on homepage
+ #'new' method is in pages controller, since the form is on homepage
 
   def create
     @wine = Wine.new(wine_params)
     @wine.user = current_user
 
     if @wine.save
-      flash[:notice] = 'Votre vin a été ajouté.'
+      flash[:notice] = 'Votre vin a été ajouté'
       redirect_to wine_path(@wine)
     else
-      flash[:alert] = 'un problème est survenu.'
+      flash[:alert] = 'Un problème est survenu'
       # render :new
       redirect_to new_wine_path
     end
@@ -34,12 +34,23 @@ class WinesController < ApplicationController
 
   def edit
     @wine = Wine.find(params[:id])
+    if @wine.user != current_user
+      flash[:alert] = "Vous n'êtes pas authorisé à modifier ce vin"
+      redirect_to wine_path(@wine)
+    elsif @wine.errors.any?
+      flash[:alert] = 'Il y a des erreurs dans les données du vin'
+    end
   end
 
   def update
     @wine = Wine.find(params[:id])
-    @wine.update(wine_params)
-    redirect_to wine_path(@wine)
+    if @wine.update(wine_params)
+      flash[:notice] = 'Modifications enregistrées'
+      redirect_to wine_path(@wine)
+    else
+      flash[:alert] = 'Un problème est survenu'
+      render :edit
+    end
   end
 
   private
