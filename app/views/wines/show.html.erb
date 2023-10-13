@@ -16,6 +16,9 @@
           <p>Commentaire : <%= @wine.comment.capitalize %></p>
           <p>Dégusté ? <%= @wine.empty ? 'Oui' : 'Non' %></p>
         </div>
+        <div class="text-center">
+          <%= link_to 'Modifier', edit_wine_path(@wine), class: 'btn submit-button' %>
+        </div>
       </div>
     </div>
   </div>
