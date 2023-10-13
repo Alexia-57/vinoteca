@@ -7,15 +7,10 @@
       <div class="rounded-border-search text-center" style="border-radius: 25px;">
         <%= form_with url: wines_path, method: :get, class: "d-flex" do %>
           <div class="input-group">
-            <%= text_field_tag :query,
-              params[:query],
-              class: "border-0 bg-white form-control",
-              placeholder: "Rechercher...",
-              style: "border-radius: 25px;"
-            %>
+            <%= text_field_tag :query, params[:query], class: "border-0 bg-white form-control", placeholder: "Rechercher...", style: "border-radius: 25px;" %>
             <div class="input-group-append">
               <%= link_to wines_path(query: params[:query]), class: "border-0 bg-transparent input-group-text icon-link" do %>
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-magnifying-glass" style="position: absolute; top: 50%; transform: translateY(-50%); right: 35px;"></i>
               <% end %>
             </div>
           </div>
