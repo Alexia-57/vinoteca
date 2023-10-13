@@ -32,6 +32,34 @@ class WinesController < ApplicationController
     @wine = Wine.find(params[:id])
   end
 
+  def edit
+    @wine = Wine.find(params[:id])
+    if @wine.user != current_user
+      flash[:alert] = "Vous n'êtes pas authorisé à modifier ce vin"
+      redirect_to wine_path(@wine)
+    elsif @wine.errors.any?
+      flash[:alert] = 'Il y a des erreurs dans les données du vin'
+    end
+  end
+
+  def update
+    @wine = Wine.find(params[:id])
+    if @wine.update(wine_params)
+      flash[:notice] = 'Modifications enregistrées'
+      redirect_to wine_path(@wine)
+    else
+      flash[:alert] = 'Un problème est survenu'
+      render :edit
+    end
+  end
+
+  def destroy
+    @wine = Wine.find(params[:id])
+    @wine = Wine.destroy
+    flash[:success] = "Votre vin a bien été supprimé"
+    redirect_to wines_path, status: :see_other
+  end
+
   private
 
   def wine_params

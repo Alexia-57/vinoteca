@@ -1,0 +1,16 @@
+.submit-button {
+  background-color: #a58875;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block; /* Display as inline-block to center horizontally */
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  }
+
+  .submit-button:hover {
+    background-color: #795f4e;
+  }
