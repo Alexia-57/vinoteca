@@ -1,3 +1,8 @@
+.card-wine-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .submit-button {
   background-color: #a58875;
   color: #fff;
@@ -5,7 +10,7 @@
   border: none;
   border-radius: 5px;
   text-align: center;
-  display: inline-block; /* Display as inline-block to center horizontally */
+  display: inline-block;
   font-size: 16px;
   font-weight: bold;
   transition: background-color 0.3s ease;
@@ -14,3 +19,29 @@
   .submit-button:hover {
     background-color: #795f4e;
   }
+
+  .delete-button {
+    background-color: #79433c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    }
+
+    .delete-button:hover {
+      background-color: #48211c;
+    }
+
+    .card-wine-buttons a {
+      text-decoration: none;
+      color: inherit; /* Inherit the parent's text color */
+    }
+
+    .card-wine-buttons a:hover {
+      color: #dad6d6;
+    }
