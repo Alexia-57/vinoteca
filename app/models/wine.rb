@@ -12,7 +12,7 @@ class Wine < ApplicationRecord
   include PgSearch::Model
 
   pg_search_scope :search_by_details,
-    against: [ :name, :wine_type, :region, :winery, :variety, :year, :country ],
+    against: [ :name, :wine_type, :region, :winery, :variety, :year, :country, :rating, :comment, :empty, :quantity ],
     using: {
       tsearch: { prefix: true }
     }

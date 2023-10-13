@@ -12,3 +12,25 @@
     </button>
   </div>
 <% end %>
+<!-- customized -->
+<% if flash[:popup_notice] %>
+  <div class="alert alert-info alert-dismissible fade show m-1" role="alert">
+    <%= flash[:popup_notice] %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+    </button>
+  </div>
+<% end %>
+<% if flash[:wine_deleted] %>
+  <div class="alert alert-success alert-dismissible fade show m-1" role="alert">
+    <%= flash[:wine_deleted] %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+    </button>
+  </div>
+<% end %>
+<% if flash[:wine_deletion_error] %>
+  <div class="alert alert-danger alert-dismissible fade show m-1" role="alert">
+    <%= flash[:wine_deletion_error] %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+    </button>
+  </div>
+<% end %>

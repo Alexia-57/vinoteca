@@ -6,7 +6,7 @@ class WinesController < ApplicationController
     @wine.user = current_user
 
     if @wine.save
-      flash[:notice] = 'Votre vin a été ajouté'
+      flash[:popup_notice] = 'Votre vin a été ajouté'
       redirect_to wine_path(@wine)
     else
       flash[:alert] = 'Un problème est survenu'
@@ -45,7 +45,7 @@ class WinesController < ApplicationController
   def update
     @wine = Wine.find(params[:id])
     if @wine.update(wine_params)
-      flash[:notice] = 'Modifications enregistrées'
+      flash[:popup_notice] = 'Modifications enregistrées'
       redirect_to wine_path(@wine)
     else
       flash[:alert] = 'Un problème est survenu'
@@ -55,8 +55,11 @@ class WinesController < ApplicationController
 
   def destroy
     @wine = Wine.find(params[:id])
-    @wine = Wine.destroy
-    flash[:success] = "Votre vin a bien été supprimé"
+    if @wine.destroy
+      flash[:wine_deleted] = "Votre vin a bien été supprimé"
+    else
+      flash[:wine_deletion_error] = "Une erreur s'est produite lors de la suppression du vin"
+    end
     redirect_to wines_path, status: :see_other
   end
 
