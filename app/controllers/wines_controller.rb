@@ -53,6 +53,13 @@ class WinesController < ApplicationController
     end
   end
 
+  def destroy
+    @wine = Wine.find(params[:id])
+    @wine = Wine.destroy
+    flash[:success] = "Votre vin a bien été supprimé"
+    redirect_to wines_path, status: :see_other
+  end
+
   private
 
   def wine_params
