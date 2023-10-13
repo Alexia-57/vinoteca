@@ -1,15 +1,15 @@
 class WinesController < ApplicationController
- #new method is in pages controller, since the form is on homepage
+ #'new' method is in pages controller, since the form is on homepage
 
   def create
     @wine = Wine.new(wine_params)
     @wine.user = current_user
 
     if @wine.save
-      flash[:notice] = 'Votre vin a été ajouté.'
+      flash[:notice] = 'Votre vin a été ajouté'
       redirect_to wine_path(@wine)
     else
-      flash[:alert] = 'un problème est survenu.'
+      flash[:alert] = 'Un problème est survenu'
       # render :new
       redirect_to new_wine_path
     end
