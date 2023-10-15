@@ -14,7 +14,7 @@
           <p>Quantité : <%= @wine.quantity %></p>
           <p>Note : <%= @wine.rating %></p>
           <p>Commentaire : <%= @wine.comment.capitalize %></p>
-          <p>Dégusté ? <%= @wine.empty ? 'Oui' : 'Non' %></p>
+          <p>Dégusté : <%= @wine.empty ? 'Oui' : 'Non' %></p>
         </div>
         <div class="card-wine-buttons">
           <%= link_to edit_wine_path(@wine) do %>
