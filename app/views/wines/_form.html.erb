@@ -1,14 +1,14 @@
 <%= simple_form_for(@wine, locale: 'fr') do |f| %>
-  <%= f.input :name %>
-  <%= f.input :wine_type %>
-  <%= f.input :country, as: :string %>
-  <%= f.input :region %>
-  <%= f.input :winery %>
-  <%= f.input :variety %>
-  <%= f.input :year, input_html: { type: :number } %>
-  <%= f.input :quantity, input_html: { type: :number } %>
-  <%= f.input :rating, input_html: { type: :number, step: 0.1, min: 0, max: 5 } %>
-  <%= f.input :comment %>
-  <%= f.input :empty, as: :boolean %>
+  <%= f.input :name, input_html: { class: 'empty-field' } %>
+  <%= f.input :wine_type, input_html: { class: 'empty-field' } %>
+  <%= f.input :country, as: :string, input_html: { class: 'empty-field' } %>
+  <%= f.input :region, input_html: { class: 'empty-field' } %>
+  <%= f.input :winery, input_html: { class: 'empty-field' } %>
+  <%= f.input :variety, input_html: { class: 'empty-field' } %>
+  <%= f.input :year, input_html: { type: :number, class: 'empty-field' } %>
+  <%= f.input :quantity, input_html: { type: :number, class: 'empty-field' } %>
+  <%= f.input :rating, input_html: { type: :number, step: 0.1, min: 0, max: 5, class: 'empty-field' } %>
+  <%= f.input :comment, input_html: { class: 'empty-field' } %>
+  <%= f.input :empty, as: :boolean, input_html: { class: 'empty-field' } %>
   <%= f.button :submit, 'Ajouter', class: 'submit-button' %>
 <% end %>
