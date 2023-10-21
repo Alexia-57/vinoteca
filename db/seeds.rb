@@ -6,6 +6,16 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+# DEFAULT COUNTRIES
+
+countries = ["France", "Italie", "Espagne", "États-Unis", "Argentine", "Chili", "Australie", "Afrique du Sud", "Allemagne", "Portugal", "Nouvelle-Zélande", "Grèce", "Hongrie", "Autriche", "Roumanie", "Bulgarie", "Croatie", "Slovénie", "Géorgie", "Canada", "Japon", "Inde"]
+sorted_countries = countries.sort
+
+sorted_countries.each do |country_name|
+  Country.create(name: country_name)
+end
+
+# SEEDS FOR WINE EXAMPLES
 puts "Destroying existing records of Wines..."
 
 Wine.destroy_all # if Rails.env.development?
