@@ -1,8 +1,8 @@
 <%= simple_form_for(@wine, locale: 'fr') do |f| %>
   <%= f.input :name, input_html: { class: 'empty-field' } %>
   <%= f.input :wine_type, input_html: { class: 'empty-field' } %>
-  <%= f.input :country, as: :string, input_html: { class: 'empty-field' } %>
-  <%= f.input :region, input_html: { class: 'empty-field' } %>
+  <%= f.association :country, collection: Country.all, label_method: :name, value_method: :id, input_html: { class: 'empty-field' } %>
+  <%= f.association :region, collection: Region.where(country: @wine.country), label_method: :name, value_method: :id, input_html: { class: 'empty-field' } %>
   <%= f.input :winery, input_html: { class: 'empty-field' } %>
   <%= f.input :variety, input_html: { class: 'empty-field' } %>
   <%= f.input :year, collection: (1990..Time.now.year).to_a.reverse, as: :select, input_html: { class: 'empty-field' } %>

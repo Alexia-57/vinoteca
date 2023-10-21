@@ -8,12 +8,35 @@
 
 # DEFAULT COUNTRIES
 
-countries = ["France", "Italie", "Espagne", "États-Unis", "Argentine", "Chili", "Australie", "Afrique du Sud", "Allemagne", "Portugal", "Nouvelle-Zélande", "Grèce", "Hongrie", "Autriche", "Roumanie", "Bulgarie", "Croatie", "Slovénie", "Géorgie", "Canada", "Japon", "Inde"]
-sorted_countries = countries.sort
+# Destroy existing records of wines first
+puts "Destroying existing records of Wines..."
+Wine.destroy_all # if Rails.env.development?
+puts "Done deleting Wines..."
+
+# Destroy existing records of regions after wines
+puts "Destroying existing records of Regions..."
+Region.destroy_all # if Rails.env.development?
+puts "Done deleting Regions..."
+
+# Destroy existing records of countries after regions
+puts "Destroying existing records of Countries..."
+Country.destroy_all # if Rails.env.development?
+puts "Done deleting Countries..."
+
+# Create a new list of unique countries
+countries = ["France", "Italie", "Espagne", "États-Unis", "Argentine", "Chili", "Australie", "Afrique du Sud", "Allemagne", "Portugal", "Nouvelle-Zélande", "Japon"]
+sorted_countries = countries.uniq.sort  # Remove duplicates and sort alphabetically
 
 sorted_countries.each do |country_name|
   Country.create(name: country_name)
 end
+
+# Find or create regions and countries based on their names (instances, not strings)
+japon = Country.find_or_create_by(name: 'Japon')
+nagano = Region.find_or_create_by(name: 'Nagano', country: japon)
+france = Country.find_or_create_by(name: 'France')
+bourgogne = Region.find_or_create_by(name: 'Bourgogne', country: france)
+bordeaux = Region.find_or_create_by(name: 'Bordeaux', country: france)
 
 # SEEDS FOR WINE EXAMPLES
 puts "Destroying existing records of Wines..."
@@ -36,10 +59,10 @@ puts "Creating new wines..."
 Wine.create(
   name: 'Château Abc',
   wine_type: 'Rouge',
-  region: 'Nagano',
+  region: nagano,
   winery: 'St Cousair',
   variety: 'Cabernet Sauvignon',
-  country: 'Japon',
+  country: japon,
   year: 2019,
   quantity: 2,
   rating: 2.5,
@@ -51,10 +74,10 @@ Wine.create(
 Wine.create(
   name: 'Le Père La Grolle',
   wine_type: 'Rouge',
-  region: 'Bourgogne',
+  region: bourgogne,
   winery: 'Inconnue',
   variety: 'Beaujolais Nouveau',
-  country: 'France',
+  country: france,
   year: 2020,
   quantity: 3,
   rating: 3.5,
@@ -66,10 +89,10 @@ Wine.create(
 Wine.create(
   name: 'Entre Deux Mers',
   wine_type: 'Blanc',
-  region: 'Bordeaux',
+  region: bordeaux,
   winery: 'Le Petit Clocher',
   variety: 'Chardonnay',
-  country: 'France',
+  country: france,
   year: 2018,
   quantity: 1,
   rating: 4.5,
