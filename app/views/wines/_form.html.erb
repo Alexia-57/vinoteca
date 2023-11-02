@@ -1,8 +1,12 @@
 <%= simple_form_for(@wine, locale: 'fr') do |f| %>
   <%= f.input :name, input_html: { class: 'empty-field' } %>
   <%= f.input :wine_type, input_html: { class: 'empty-field' } %>
-  <%= f.input :country, as: :string, input_html: { class: 'empty-field' } %>
-  <%= f.input :region, input_html: { class: 'empty-field' } %>
+  <%= f.input :country, label: 'Pays', collection: (Country.all + [Country.new(id: 'new', name: '+ Ajouter un pays')]), label_method: :name, value_method: :id, input_html: { class: 'empty-field', id: 'country-dropdown' } %>
+  <!-- "Nouveau pays" input field -->
+  <div id="new-country-field" style="display: none">
+    <%= f.input :new_country_name, label: 'Nouveau pays', input_html: { class: 'empty-field' } %>
+  </div>
+  <%= f.association :region, collection: Region.where(country: @wine.country), label_method: :name, value_method: :id, input_html: { class: 'empty-field' } %>
   <%= f.input :winery, input_html: { class: 'empty-field' } %>
   <%= f.input :variety, input_html: { class: 'empty-field' } %>
   <%= f.input :year, collection: (1990..Time.now.year).to_a.reverse, as: :select, input_html: { class: 'empty-field' } %>

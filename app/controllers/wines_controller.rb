@@ -1,19 +1,40 @@
 class WinesController < ApplicationController
  #'new' method is in pages controller, since the form is on homepage
 
+  # def create
+  #   @wine = Wine.new(wine_params)
+  #   @wine.user = current_user
+
+  #   if @wine.save
+  #     flash[:popup_notice] = 'Votre vin a été ajouté'
+  #     redirect_to wine_path(@wine)
+  #   else
+  #     flash[:alert] = 'Un problème est survenu'
+  #     # render :new
+  #     redirect_to new_wine_path
+  #   end
+  # end
+
+  # wines_controller.rb
   def create
     @wine = Wine.new(wine_params)
     @wine.user = current_user
+
+    if @wine.country_id == 'new' && @wine.new_country_name.present?
+      # Create a new country
+      @country = Country.create(name: @wine.new_country_name)
+      @wine.country = @country
+    end
 
     if @wine.save
       flash[:popup_notice] = 'Votre vin a été ajouté'
       redirect_to wine_path(@wine)
     else
       flash[:alert] = 'Un problème est survenu'
-      # render :new
       redirect_to new_wine_path
     end
   end
+
 
   def index
     @user = current_user

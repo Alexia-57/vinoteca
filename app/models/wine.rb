@@ -1,9 +1,13 @@
 class Wine < ApplicationRecord
   belongs_to :user
+  belongs_to :country, optional: true
+  belongs_to :region, optional: true
 
-  validates_presence_of :name, :year, :quantity, :country, :region, :winery, :wine_type, :variety
+  validates_presence_of :name, :quantity, :country, :wine_type
   validates_numericality_of :year, only_integer: true
   validates_inclusion_of :rating, in: 0..5, allow_nil: true
+
+  attr_accessor :new_country_name
 
   attribute :empty, :boolean, default: false
 
