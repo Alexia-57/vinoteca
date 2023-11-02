@@ -25,6 +25,7 @@
   text-decoration: none;
   color: #ffffff;
   margin: 20px;
+  margin-bottom: 100px; /* prevents to go under the footer */
   padding: 20px;
   max-width: 90%; /* Allow the card to expand */
   box-sizing: border-box; /* Include padding and border in the width calculation */
