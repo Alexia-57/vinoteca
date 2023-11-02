@@ -59,6 +59,11 @@ input:invalid {
   border: 2px solid red !important;
 }
 
+abbr {
+  text-decoration: none !important; /* Remove the underline with !important */
+}
+
+
 @keyframes shake {
   0%, 100% {
       transform: translateX(0);
