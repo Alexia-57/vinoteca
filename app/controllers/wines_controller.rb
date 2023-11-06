@@ -28,13 +28,12 @@ class WinesController < ApplicationController
 
     if @wine.save
       flash[:popup_notice] = 'Votre vin a été ajouté'
-      redirect_to wine_path(@wine)
+      redirect_to wine_path(@wine)  # Redirect to the "show" action for the newly created wine
     else
       flash[:alert] = 'Un problème est survenu'
-      render :new  # Render the new view again to display validation errors
+      redirect_to new_wine_path  # Explicitly redirect to the "new" action to display validation errors
     end
   end
-
 
   def index
     @user = current_user
@@ -87,7 +86,7 @@ class WinesController < ApplicationController
   private
 
   def wine_params
-    params.require(:wine).permit(:name, :wine_type, :country, :region, :winery, :variety, :year, :quantity, :rating, :empty, :comment)
+    params.require(:wine).permit(:name, :wine_type, :country_id, :region, :winery, :variety, :year, :quantity, :rating, :empty, :comment)
   end
 
 end
