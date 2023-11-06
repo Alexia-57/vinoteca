@@ -31,7 +31,7 @@ class WinesController < ApplicationController
       redirect_to wine_path(@wine)
     else
       flash[:alert] = 'Un problème est survenu'
-      redirect_to new_wine_path
+      render :new  # Render the new view again to display validation errors
     end
   end
 
