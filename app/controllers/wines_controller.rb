@@ -26,7 +26,8 @@ class WinesController < ApplicationController
       @wine.country = @country
     end
 
-    if @wine.save
+    if @wine.valid?
+      @wine.save
       flash[:popup_notice] = 'Votre vin a été ajouté'
       redirect_to wine_path(@wine)  # Redirect to the "show" action for the newly created wine
     else
@@ -86,7 +87,7 @@ class WinesController < ApplicationController
   private
 
   def wine_params
-    params.require(:wine).permit(:name, :wine_type, :country_id, :region, :winery, :variety, :year, :quantity, :rating, :empty, :comment)
+    params.require(:wine).permit(:name, :wine_type, :region, :winery, :variety, :year, :quantity, :rating, :comment, :empty, :country_id)
   end
 
 end

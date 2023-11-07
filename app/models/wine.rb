@@ -1,6 +1,6 @@
 class Wine < ApplicationRecord
   belongs_to :user
-  belongs_to :country, optional: true
+  # belongs_to :country, optional: true
   # belongs_to :region, optional: true
 
   # # Remove the association with Region and the region_id column

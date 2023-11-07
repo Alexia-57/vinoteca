@@ -9,34 +9,34 @@
 # DEFAULT COUNTRIES
 
 # Destroy existing records of wines first
-puts "Destroying existing records of Wines..."
-Wine.destroy_all # if Rails.env.development?
-puts "Done deleting Wines..."
+# puts "Destroying existing records of Wines..."
+# Wine.destroy_all # if Rails.env.development?
+# puts "Done deleting Wines..."
 
-# Destroy existing records of regions after wines
-puts "Destroying existing records of Regions..."
-Region.destroy_all # if Rails.env.development?
-puts "Done deleting Regions..."
+# # Destroy existing records of regions after wines
+# puts "Destroying existing records of Regions..."
+# Region.destroy_all # if Rails.env.development?
+# puts "Done deleting Regions..."
 
-# Destroy existing records of countries after regions
-puts "Destroying existing records of Countries..."
-Country.destroy_all # if Rails.env.development?
-puts "Done deleting Countries..."
+# # Destroy existing records of countries after regions
+# puts "Destroying existing records of Countries..."
+# Country.destroy_all # if Rails.env.development?
+# puts "Done deleting Countries..."
 
 # Create a new list of unique countries
-countries = ["France", "Italie", "Espagne", "États-Unis", "Argentine", "Chili", "Australie", "Afrique du Sud", "Allemagne", "Portugal", "Nouvelle-Zélande", "Japon"]
-sorted_countries = countries.uniq.sort  # Remove duplicates and sort alphabetically
+# countries = ["France", "Italie", "Espagne", "États-Unis", "Argentine", "Chili", "Australie", "Afrique du Sud", "Allemagne", "Portugal", "Nouvelle-Zélande", "Japon"]
+# sorted_countries = countries.uniq.sort  # Remove duplicates and sort alphabetically
 
-sorted_countries.each do |country_name|
-  Country.create(name: country_name)
-end
+# sorted_countries.each do |country_name|
+#   Country.create(name: country_name)
+# end
 
 # Find or create regions and countries based on their names (instances, not strings)
-japon = Country.find_or_create_by(name: 'Japon')
-nagano = Region.find_or_create_by(name: 'Nagano', country: japon)
-france = Country.find_or_create_by(name: 'France')
-bourgogne = Region.find_or_create_by(name: 'Bourgogne', country: france)
-bordeaux = Region.find_or_create_by(name: 'Bordeaux', country: france)
+# japon = Country.find_or_create_by(name: 'Japon')
+# nagano = Region.find_or_create_by(name: 'Nagano', country: japon)
+# france = Country.find_or_create_by(name: 'France')
+# bourgogne = Region.find_or_create_by(name: 'Bourgogne', country: france)
+# bordeaux = Region.find_or_create_by(name: 'Bordeaux', country: france)
 
 # SEEDS FOR WINE EXAMPLES
 puts "Destroying existing records of Wines..."
