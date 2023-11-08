@@ -10,5 +10,7 @@
   <%= f.input :rating, input_html: { type: :number, step: 0.1, min: 0, max: 5, class: 'empty-field' } %>
   <%= f.input :comment, input_html: { class: 'empty-field' } %>
   <%= f.input :empty, as: :boolean %>
-  <%= f.button :submit, 'Ajouter', class: 'submit-button' %>
+  <div style="text-align: center">
+    <%= f.button :submit, 'Ajouter', class: 'submit-button' %>
+  </div>
 <% end %>
