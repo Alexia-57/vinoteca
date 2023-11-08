@@ -2,7 +2,7 @@ class Wine < ApplicationRecord
   belongs_to :user
 
   validates_presence_of :name, :quantity, :country, :wine_type
-  validates_numericality_of :year, only_integer: true
+  # validates_numericality_of :year, only_integer: true
   validates_inclusion_of :rating, in: 0..5, allow_nil: true
 
   attribute :empty, :boolean, default: false
