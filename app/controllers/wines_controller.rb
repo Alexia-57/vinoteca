@@ -15,6 +15,10 @@ class WinesController < ApplicationController
     end
   end
 
+  # def new
+  #   @wine = Wine.new
+  # end
+
   def index
     @user = current_user
     @wines = @user.wines
