@@ -7,7 +7,7 @@ class Wine < ApplicationRecord
   # attribute :region, :string
 
   validates_presence_of :name, :quantity, :country, :wine_type
-  validates_numericality_of :year, only_integer: true
+  # validates_numericality_of :year, only_integer: true
   validates_inclusion_of :rating, in: 0..5, allow_nil: true
 
   attr_accessor :new_country_name
