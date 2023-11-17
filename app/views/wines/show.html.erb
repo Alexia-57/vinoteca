@@ -5,16 +5,16 @@
         <div class="card-wine-body">
           <h2><%= @wine.name.capitalize %></h2>
           <br>
-          <p><b>Type de vin :</b> <%= @wine.wine_type.capitalize %></p>
-          <p>Pays : <%= @wine.country.capitalize %></p>
-          <p>Région : <%= @wine.region.capitalize %></p>
-          <p>Domaine : <%= @wine.winery.capitalize %></p>
-          <p>Cépage : <%= @wine.variety.capitalize %></p>
-          <p>Année : <%= @wine.year %></p>
-          <p>Quantité : <%= @wine.quantity %></p>
-          <p>Note : <%= @wine.rating %></p>
-          <p>Commentaire : <%= @wine.comment.capitalize %></p>
-          <p>Dégusté : <%= @wine.empty ? 'Oui' : 'Non' %></p>
+          <p class="wine-details"><strong>Type de vin</strong>: <%= @wine.wine_type.capitalize %></p>
+          <p class="wine-details"><strong>Pays :</strong> <%= @wine.country.capitalize %></p>
+          <p class="wine-details"><strong>Région :</strong> <%= @wine.region.capitalize %></p>
+          <p class="wine-details"><strong>Domaine :</strong> <%= @wine.winery.capitalize %></p>
+          <p class="wine-details"><strong>Cépage :</strong> <%= @wine.variety.capitalize %></p>
+          <p class="wine-details"><strong>Année :</strong> <%= @wine.year %></p>
+          <p class="wine-details"><strong>Quantité :</strong> <%= @wine.quantity %></p>
+          <p class="wine-details"><strong>Note :</strong> <%= @wine.rating %></p>
+          <p class="wine-details"><strong>Commentaire :</strong> "<%= @wine.comment.capitalize %>"</p>
+          <p class="wine-details"><strong>Dégusté :</strong> <%= @wine.empty ? 'Oui' : 'Non' %></p>
         </div>
         <div class="card-wine-buttons">
           <%= link_to edit_wine_path(@wine) do %>
