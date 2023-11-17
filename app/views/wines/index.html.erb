@@ -21,15 +21,16 @@
   <div class="home-grid mt-3 mb-5 d-flex flex-wrap">
     <% if @wines.any? %>
       <% @wines.each do |wine| %>
-        <a href="<%= wine_path(wine.id) %>" class="card-index">
+        <a href="<%= wine_path(wine.id) %>" class="card-index <%= wine.empty ? 'empty-wine' : '' %>">
           <div class="card-index-body">
-            <p><b><%= wine.name.capitalize %></b></p>
-            <p><%= wine.wine_type.capitalize %></p>
-            <p><%= wine.country.capitalize %></p>
-            <p><%= wine.region.capitalize %></p>
-            <p><%= wine.winery.capitalize %></p>
-            <p><%= wine.variety.capitalize %></p>
-            <p><%= wine.year %></p>
+            <h3><%= wine.name.capitalize %></h3>
+            <br>
+            <p class="wine-details"><strong>Type de vin</strong> : <%= wine.wine_type.capitalize %></p>
+            <p class="wine-details"><strong>Pays :</strong> <%= wine.country.capitalize %></p>
+            <p class="wine-details"><strong>Région :</strong> <%= wine.region.capitalize %></p>
+            <p class="wine-details"><strong>Domaine :</strong> <%= wine.winery.capitalize %></p>
+            <p class="wine-details"><strong>Cépage :</strong> <%= wine.variety.capitalize %></p>
+            <p class="wine-details"><strong>Année :</strong> <%= wine.year %></p>
           </div>
         </a>
       <% end %>
