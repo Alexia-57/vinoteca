@@ -2,6 +2,7 @@ databases:
   - name: vinoteca
     databaseName: vinoteca
     user: vinoteca
+    plan: free
 
 services:
   - type: web
