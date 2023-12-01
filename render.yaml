@@ -12,7 +12,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: Vinoteca
           property: connectionString
-      - key: RAILS_MASTER_KEY
+      - key: 118b443047a9bda7a05056c3502b5e0f
         sync: false
