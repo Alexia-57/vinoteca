@@ -16,5 +16,5 @@ services:
         fromDatabase:
           name: vinoteca
           property: connectionString
-      - key: 9caa01c84516942e3f7173efec810da54b7c919f1d28896acf0f9e3177bec124bc3ad36b4d871c5eff4d90a483610c342f082a2f8857edfdf8135c0ae9e64afd
+      - key: RAILS_MASTER_KEY
         sync: false
