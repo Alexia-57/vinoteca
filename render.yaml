@@ -1,7 +1,7 @@
 databases:
-  - name: Vinoteca
-    databaseName: Vinoteca
-    user: Vinoteca
+  - name: vinoteca
+    databaseName: vinoteca
+    user: vinoteca
 
 services:
   - type: web
@@ -9,6 +9,7 @@ services:
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
+    plan: free
     envVars:
       - key: DATABASE_URL
         fromDatabase:
