@@ -5,14 +5,14 @@ databases:
 
 services:
   - type: web
-    name: mysite
+    name: vinoteca
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: Vinoteca
+          name: vinoteca
           property: connectionString
-      - key: 118b443047a9bda7a05056c3502b5e0f
+      - key: RAILS_MASTER_KEY
         sync: false
