@@ -1,5 +1,5 @@
 databases:
-  - name: vinoteca
+  - name: postgres
     #databaseName: vinoteca
     #user: vinoteca
     ipAllowList: []
