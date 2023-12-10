@@ -3,6 +3,7 @@ databases:
     #databaseName: vinoteca
     #user: vinoteca
     ipAllowList: []
+    plan: free
 
 services:
   - type: web
