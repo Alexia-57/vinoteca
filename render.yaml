@@ -23,7 +23,7 @@
 #   #   maxmemoryPolicy: noeviction
 
 databases:
-  - name: postgress
+  - name: vinoteca
     databaseName: vinoteca
     user: vinoteca
     plan: free
