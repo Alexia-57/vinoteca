@@ -22,7 +22,9 @@
               <i class="fas fa-pencil-alt"></i>
             </button>
           <% end %>
-          <%= link_to "Supprimer", wine_path(@wine), data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr ?"}, class: "btn delete-button"%>
+          <%= button_to wine_path(@wine), method: :delete,  data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr ?"}, class: 'btn delete-button' do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
         </div>
       </div>
     </div>
