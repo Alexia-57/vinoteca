@@ -38,9 +38,7 @@ h2 {
   color: #ffff;
   text-align: center;
   font-size: 36px;
-  white-space: nowrap; /* Prevent line breaks */
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-wrap: break-word;
 }
 
 h3 {
@@ -48,9 +46,7 @@ h3 {
   color: #ffff;
   text-align: center;
   font-size: 27px;
-  white-space: nowrap; /* Prevent line breaks */
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-wrap: break-word;
 }
 
 .empty-wine h3 {
@@ -80,6 +76,7 @@ abbr {
   text-decoration: none !important; /* Remove the underline with !important */
 }
 
+
 @keyframes shake {
   0%, 100% {
       transform: translateX(0);
@@ -91,9 +88,3 @@ abbr {
       transform: translateX(10px);
   }
 }
-
-// @media screen and (min-width: 768px) {
-//   h2 {
-//     font-size: 1.2em; /* Adjust font size for larger screens */
-//   }
-// }

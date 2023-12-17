@@ -34,7 +34,6 @@
 
 .card-wine {
   border-radius: 5px;
-  width: 280px;
   height: auto;
   background: rgba(94, 67, 67, 0.7);
   text-decoration: none;
@@ -42,6 +41,8 @@
   margin: 10px;
   padding-bottom: 20px;
   overflow: hidden;
+  max-width: 80%; /* Allow the card to expand */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
 }
 
 .card-wine-body {
