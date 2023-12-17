@@ -38,6 +38,7 @@ h2 {
   color: #ffff;
   text-align: center;
   font-size: 36px;
+  overflow-wrap: break-word;
 }
 
 h3 {
@@ -45,6 +46,7 @@ h3 {
   color: #ffff;
   text-align: center;
   font-size: 27px;
+  overflow-wrap: break-word;
 }
 
 .empty-wine h3 {
@@ -73,6 +75,7 @@ input:invalid {
 abbr {
   text-decoration: none !important; /* Remove the underline with !important */
 }
+
 
 @keyframes shake {
   0%, 100% {
