@@ -2,8 +2,9 @@ fr:
   simple_form:
     labels:
       defaults:
-        email: "addresse email"
+        email: "Addresse e-mail"
         password: "Mot de passe"
+        password_confirmation: "Confirmer le mot de passe"
         remember_me: "Se souvenir de moi"
         sign_in: "Se connecter"
         sign_up: "S'inscrire"
