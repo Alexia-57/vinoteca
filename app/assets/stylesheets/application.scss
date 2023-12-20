@@ -76,6 +76,19 @@ abbr {
   text-decoration: none !important; /* Remove the underline with !important */
 }
 
+.btn { /* class for device login button to keep text white */
+  color: #ffff !important;
+}
+
+.devise-text { /* class for text such as "forgot password?" */
+  color: #ffff !important;
+  text-decoration: none !important;
+}
+
+.devise-text:hover {
+  color: #947f7f !important;
+}
+
 
 @keyframes shake {
   0%, 100% {
