@@ -7,3 +7,4 @@ fr:
     failure:
       already_authenticated: "Vous êtes déjà connecté."
       already_signed_out: "Vous êtes déjà déconnecté."
+      not_found_in_database: "Identifiant ou mot de passe incorrect."
