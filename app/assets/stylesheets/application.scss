@@ -74,6 +74,10 @@ abbr {
   text-decoration: none !important; /* Remove the underline with !important */
 }
 
+.btn { /* class for device login button to keep text white */
+  color: #ffff !important;
+}
+
 @keyframes shake {
   0%, 100% {
       transform: translateX(0);
