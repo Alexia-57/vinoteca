@@ -78,6 +78,16 @@ abbr {
   color: #ffff !important;
 }
 
+.devise-text { /* class for text such as "forgot password?" */
+  color: #ffff !important;
+  text-decoration: none !important;
+}
+
+.devise-text:hover {
+  color: #947f7f !important;
+}
+
+
 @keyframes shake {
   0%, 100% {
       transform: translateX(0);
