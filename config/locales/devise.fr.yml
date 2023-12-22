@@ -1,7 +1,7 @@
 fr:
   devise:
     sessions:
-      signed_out: "Echec de la connexion."
+      signed_out: "Déconnexion réussie."
       signed_in: "Connexion réussie."
       already_signed_out: "Vous êtes déjà déconnecté."
     failure:
