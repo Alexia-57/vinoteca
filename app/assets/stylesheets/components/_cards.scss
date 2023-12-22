@@ -38,12 +38,15 @@
   background: rgba(94, 67, 67, 0.7);
   text-decoration: none;
   color: #ffffff;
-  margin: 10px;
+  margin: 10px auto; /* Center the card horizontally */
   padding-bottom: 20px;
   overflow: hidden;
-  max-width: 80%; /* Allow the card to expand */
+  width: 80%; /* Adjust as needed */
+  min-width: 300px; /* Set your desired minimum width */
+  max-width: 600px; /* Set a maximum width */
   box-sizing: border-box; /* Include padding and border in the width calculation */
 }
+
 
 .card-wine-body {
   padding: 20px;
