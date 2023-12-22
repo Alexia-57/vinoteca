@@ -28,9 +28,11 @@
           </a>
         </li>
         <li class="nav-item active">
-          <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
-            <img src="<%= image_path('logout-icon.png') %>" alt="Logout Logo" class="menu-icon">
-            Déconnexion
+          <%= form_tag(destroy_user_session_path, method: :delete) do %>
+            <%= button_tag(type: 'submit', class: 'nav-link', data: { confirm: 'Are you sure?' }) do %>
+              <img src="<%= image_path('logout-icon.png') %>" alt="Logout Logo" class="menu-icon">
+              Déconnexion
+            <% end %>
           <% end %>
         </li>
       </ul>
