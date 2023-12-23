@@ -1,7 +1,10 @@
 class User < ApplicationRecord
   has_many :wines, class_name: 'Wine'
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
+  # Add the username attribute
+  validates :username, presence: true, uniqueness: true
+
+  # Devise modules
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
