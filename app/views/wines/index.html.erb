@@ -23,7 +23,7 @@
       <% @wines.each do |wine| %>
         <a href="<%= wine_path(wine.id) %>" class="card-index <%= wine.empty ? 'empty-wine' : '' %>">
           <div class="card-index-body">
-            <h3><%= wine.name.capitalize %></h3>
+            <h3><%= wine.name.titleize %></h3>
             <br>
             <p class="wine-details"><strong>Type de vin</strong> : <%= wine.wine_type.capitalize %></p>
             <p class="wine-details"><strong>Pays :</strong> <%= wine.country.capitalize %></p>
