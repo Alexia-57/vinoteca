@@ -3,7 +3,7 @@
     <div class="home-grid mt-3 mb-5 d-flex flex-wrap">
       <div class="card-wine mx-auto">
         <div class="card-wine-body">
-          <h2><%= @wine.name.capitalize %></h2>
+          <h2><%= @wine.name.titleize %></h2>
           <br>
           <p class="wine-details"><strong>Type de vin :</strong> <%= @wine.wine_type.capitalize %></p>
           <p class="wine-details"><strong>Pays :</strong> <%= @wine.country.capitalize %></p>
