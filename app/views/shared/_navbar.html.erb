@@ -21,20 +21,29 @@
             Favoris
           </a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="/users/sign_in">
-            <img src="<%= image_path('login-icon.png') %>" alt="Login Logo" class="menu-icon">
-            Connexion
-          </a>
-        </li>
-        <li class="nav-item active">
-          <%= form_tag(destroy_user_session_path, method: :delete) do %>
-            <%= button_tag(type: 'submit', class: 'nav-link', data: { confirm: 'Are you sure?' }) do %>
-              <img src="<%= image_path('logout-icon.png') %>" alt="Logout Logo" class="menu-icon">
-              Déconnexion
+        <% if user_signed_in? %>
+          <li class="nav-item active">
+            <span class="nav-link">
+              <img src="<%= image_path('user2.png') %>" alt="Icon" class="menu-icon">
+              <%= current_user.username %> <!-- Display the user's email as an example -->
+            </span>
+          </li>
+          <li class="nav-item active">
+            <%= form_tag(destroy_user_session_path, method: :delete) do %>
+              <%= button_tag(type: 'submit', class: 'nav-link', data: { confirm: 'Are you sure?' }) do %>
+                <img src="<%= image_path('logout-icon.png') %>" alt="Logout Logo" class="menu-icon">
+                Déconnexion
+              <% end %>
             <% end %>
-          <% end %>
-        </li>
+          </li>
+        <% else %>
+          <li class="nav-item active">
+            <a class="nav-link" href="/users/sign_in">
+              <img src="<%= image_path('login-icon.png') %>" alt="Login Logo" class="menu-icon">
+              Connexion
+            </a>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

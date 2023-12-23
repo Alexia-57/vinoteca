@@ -1,0 +1,13 @@
+fr:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: "Cette adresse e-mail est déjà utilisée."
+            username:
+              blank: "Le nom d'utilisateur ne peut pas être vide."
+              taken: "Ce nom d'utilisateur est déjà utilisé."
+            password_confirmation:
+              confirmation: "La confirmation du mot de passe ne correspond pas."
