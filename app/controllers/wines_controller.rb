@@ -20,13 +20,12 @@ class WinesController < ApplicationController
     @wines = @user.wines
 
     if params[:query].present?
-      @wines = Wine.search_by_details(params[:query])
+      @wines = @user.wines.search_by_details(params[:query]) # @wines = Wine.search_by_details(params[:query]) would search over all Wine model even from other users
     else
-      # @wines = Wine.all
-      # order(created_at: :desc) is to display most recent first
-      @wines = current_user.wines.order(created_at: :desc)
+      @wines = @user.wines.order(created_at: :desc)
     end
   end
+
 
   def show
     @wine = Wine.find(params[:id])
