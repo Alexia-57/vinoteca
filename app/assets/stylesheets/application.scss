@@ -24,7 +24,7 @@ body.body-homepage {
 
 body {
   background-color: #3d2832;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/background5.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), asset-url('background5.jpg');
   color: #e4dde3;
   background-size: cover; /* Cover the width */
   background-size: 100% auto; /* Maintain aspect ratio for the height */
