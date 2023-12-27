@@ -62,6 +62,11 @@ class WinesController < ApplicationController
     redirect_to wines_path, status: :see_other
   end
 
+  def empty_wines
+    @user = current_user
+    @empty_wines = @user.wines.where(empty: true).order(created_at: :desc)
+  end
+
   private
 
   def wine_params

@@ -1,0 +1,32 @@
+<!-- empty_wines.html.erb -->
+<div class="container">
+  <div class="description mt-5">
+    <h2>Vins dégustés</h2>
+  </div>
+  <div class="row justify-content-center">
+    <!-- Display empty wines -->
+    <div class="col-sm-8 my-3 custom-margin-bottom">
+      <div class="home-grid mt-3 mb-5 d-flex flex-wrap">
+        <% if @empty_wines.any? %>
+          <% @empty_wines.each do |wine| %>
+            <a href="<%= wine_path(wine.id) %>" class="card-index <%= wine.empty ? 'empty-wine' : '' %>">
+              <!-- Render wine details -->
+              <div class="card-index-body">
+                <h3><%= wine.name.titleize %></h3>
+                <br>
+                <p class="wine-details"><strong>Type de vin</strong> : <%= wine.wine_type.capitalize %></p>
+                <p class="wine-details"><strong>Pays :</strong> <%= wine.country.capitalize %></p>
+                <p class="wine-details"><strong>Région :</strong> <%= wine.region.capitalize %></p>
+                <p class="wine-details"><strong>Domaine :</strong> <%= wine.winery.capitalize %></p>
+                <p class="wine-details"><strong>Cépage :</strong> <%= wine.variety.capitalize %></p>
+                <p class="wine-details"><strong>Année :</strong> <%= wine.year %></p>
+              </div>
+            </a>
+          <% end %>
+        <% else %>
+          <p>No empty wines found.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
