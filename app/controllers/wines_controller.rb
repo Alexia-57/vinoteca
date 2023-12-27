@@ -32,9 +32,9 @@ class WinesController < ApplicationController
   def index
     @user = current_user
     if params[:query].present?
-      @wines = @user.wines.search_by_details(params[:query]).where(empty: false)
+      @wines = @user.wines.search_by_details(params[:query]).where(empty: false).order(year: :asc)
     else
-      @wines = @user.wines.where(empty: false).order(created_at: :desc)
+      @wines = @user.wines.where(empty: false).order(year: :asc, created_at: :desc)
     end
   end
 
@@ -75,7 +75,7 @@ class WinesController < ApplicationController
 
   def empty_wines
     @user = current_user
-    @empty_wines = @user.wines.where(empty: true).order(created_at: :desc)
+    @empty_wines = @user.wines.where(empty: true).order(year: :asc, created_at: :desc)
   end
 
   private
