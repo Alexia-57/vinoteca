@@ -15,17 +15,28 @@ class WinesController < ApplicationController
     end
   end
 
+  ## INITIAL INDEX
+  # def index
+  #   @user = current_user
+  #   @wines = @user.wines
+
+  #   if params[:query].present?
+  #     @wines = @user.wines.search_by_details(params[:query]) # @wines = Wine.search_by_details(params[:query]) would search over all Wine model even from other users
+  #   else
+  #     @wines = @user.wines.order(created_at: :desc)
+  #   end
+  # end
+
+  ## INDEX TO DISPLAY ONLY NON-EMPTY WINES
+
   def index
     @user = current_user
-    @wines = @user.wines
-
     if params[:query].present?
-      @wines = @user.wines.search_by_details(params[:query]) # @wines = Wine.search_by_details(params[:query]) would search over all Wine model even from other users
+      @wines = @user.wines.search_by_details(params[:query]).where(empty: false)
     else
-      @wines = @user.wines.order(created_at: :desc)
+      @wines = @user.wines.where(empty: false).order(created_at: :desc)
     end
   end
-
 
   def show
     @wine = Wine.find(params[:id])
