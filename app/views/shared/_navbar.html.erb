@@ -18,7 +18,13 @@
         <li class="nav-item active">
           <a class="nav-link" href="">
             <img src="<%= image_path('favwines-icon.png') %>" alt="Logo" class="menu-icon">
-            Favoris
+            Vins favoris
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="">
+            <img src="<%= image_path('empty-icon.png') %>" alt="Logo" class="menu-icon">
+            Vins dégustés
           </a>
         </li>
         <% if user_signed_in? %>
