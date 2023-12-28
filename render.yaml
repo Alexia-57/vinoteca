@@ -3,6 +3,7 @@ databases:
     ipAllowList: []
     databaseName: vinoteca_render
     plan: free
+    region: frankfurt
 
 services:
   - type: web
@@ -11,6 +12,7 @@ services:
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec rails s"
     plan: free
+    region: frankfurt
     envVars:
       - key: RAILS_MASTER_KEY
         sync: false
