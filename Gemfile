@@ -48,6 +48,9 @@ gem "sassc-rails"
 # Searchbar
 gem "pg_search"
 
+# mobile friendliness
+gem "serviceworker-rails"
+
 # country list
 gem 'country_select'
 
