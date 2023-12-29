@@ -1,5 +1,5 @@
 databases:
-  - name: postgres
+  - name: vinoteca2
     ipAllowList: []
     databaseName: vinoteca_render
     plan: free
@@ -7,7 +7,7 @@ databases:
 
 services:
   - type: web
-    name: vinoteca
+    name: vinoteca2
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec rails s"
