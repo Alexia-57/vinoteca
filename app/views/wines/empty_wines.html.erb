@@ -3,8 +3,19 @@
     <h2>Vins dégustés</h2>
   </div>
   <div class="row justify-content-center">
-    <!-- Display empty wines -->
     <div class="col-sm-8 my-3 custom-margin-bottom">
+      <div class="rounded-border-search text-center" style="border-radius: 25px;">
+        <%= form_with url: empty_wines_path, method: :get, class: "d-flex" do %>
+          <div class="input-group">
+            <%= text_field_tag :query, params[:query], class: "border-0 bg-white form-control", placeholder: "Rechercher...", style: "border-radius: 25px;" %>
+            <div class="input-group-append">
+              <%= link_to empty_wines_path(query: params[:query]), class: "border-0 bg-transparent input-group-text icon-link" do %>
+                <i class="fa-solid fa-magnifying-glass" style="position: absolute; top: 50%; transform: translateY(-50%); right: 35px;"></i>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
       <div class="home-grid mt-3 mb-5 d-flex flex-wrap">
         <% if @empty_wines.any? %>
           <% @empty_wines.each do |wine| %>
@@ -17,7 +28,6 @@
                 <p class="wine-details"><strong>Pays :</strong> <%= wine.country.capitalize %></p>
                 <p class="wine-details"><strong>Région :</strong> <%= wine.region.capitalize %></p>
                 <p class="wine-details"><strong>Domaine :</strong> <%= wine.winery.titleize %></p>
-                <p class="wine-details"><strong>Cépage :</strong> <%= wine.variety.capitalize %></p>
                 <p class="wine-details"><strong>Année :</strong> <%= wine.year %></p>
               </div>
             </a>
