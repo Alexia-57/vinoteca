@@ -27,7 +27,6 @@ class WinesController < ApplicationController
   #   end
   # end
 
-  ## INDEX TO DISPLAY ONLY NON-EMPTY WINES
 
   def index
     @user = current_user
@@ -37,6 +36,18 @@ class WinesController < ApplicationController
       @wines = @user.wines.where(empty: false).order(year: :asc, created_at: :desc)
     end
   end
+
+  ## INDEX TO DISPLAY ONLY NON-EMPTY WINES
+
+  def empty_wines
+    @user = current_user
+    if params[:query].present?
+      @empty_wines = @user.wines.search_by_details(params[:query]).where(empty: true).order(year: :asc)
+    else
+      @empty_wines = @user.wines.where(empty: true).order(year: :asc, created_at: :desc)
+    end
+  end
+
 
   def show
     @wine = Wine.find(params[:id])
@@ -71,11 +82,6 @@ class WinesController < ApplicationController
       flash[:wine_deletion_error] = "Une erreur s'est produite lors de la suppression du vin"
     end
     redirect_to wines_path, status: :see_other
-  end
-
-  def empty_wines
-    @user = current_user
-    @empty_wines = @user.wines.where(empty: true).order(year: :asc, created_at: :desc)
   end
 
   private
