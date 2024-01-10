@@ -25,12 +25,14 @@
   background: rgba(94, 67, 67, 0.7);
   text-decoration: none;
   color: #ffffff;
-  margin: 20px;
-  margin-bottom: 100px; /* prevents to go under the footer */
+  margin: 20px auto; /* Center the card horizontally */
+  margin-bottom: 100px; /* prevents from going under the footer */
   padding: 20px;
-  max-width: 90%; /* Allow the card to expand */
+  max-width: 800px; /* Set a maximum width */
+  width: 90%; /* Fallback for smaller screens */
   box-sizing: border-box; /* Include padding and border in the width calculation */
 }
+
 
 .card-wine {
   border-radius: 5px;
