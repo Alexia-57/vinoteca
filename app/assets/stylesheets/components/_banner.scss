@@ -28,3 +28,15 @@
   left: 30px;
   font-family: 'mali', serif;
 }
+
+/* Media query for larger screens */
+@media (min-width: 992px) {
+  .banner h1 {
+    font-size: 78px;
+  }
+
+  .banner p {
+    font-size: 34px;
+    padding-top: 15px;
+  }
+}
