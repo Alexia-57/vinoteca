@@ -26,6 +26,9 @@
           <a href="<%= wine_path(wine.id) %>" class="card-index">
             <div class="card-index-body">
               <h3><%= wine.name.titleize %></h3>
+              <div class="favorite">
+                <i class="fa-solid fa-heart"></i>
+              </div>
               <br>
               <p class="wine-details"><strong>Type de vin : </strong> <%= wine.wine_type.capitalize %></p>
               <p class="wine-details"><strong>Pays :</strong> <%= wine.country.capitalize %></p>
