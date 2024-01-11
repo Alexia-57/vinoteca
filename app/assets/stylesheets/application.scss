@@ -11,6 +11,7 @@
 @import "components/index";
 @import "pages/index";
 @import "components/cards";
+@import "components/searchbar";
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lora&family=Open+Sans:wght@300&family=Parisienne&family=Satisfy&display=swap');
 
@@ -32,7 +33,6 @@ body {
   background-position: center center;
   font-family: 'lora', serif;
 }
-
 
 h2 {
   font-family: 'parisienne', serif;
@@ -95,7 +95,6 @@ abbr {
 .devise-text:hover {
   color: #947f7f !important;
 }
-
 
 @keyframes shake {
   0%, 100% {
