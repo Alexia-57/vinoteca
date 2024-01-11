@@ -12,6 +12,8 @@
 @import "pages/index";
 @import "components/cards";
 @import "components/searchbar";
+@import "components/cards";
+@import "components/buttons";
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lora&family=Open+Sans:wght@300&family=Parisienne&family=Satisfy&display=swap');
 
@@ -51,7 +53,7 @@ h3 {
 }
 
 .title {
-  padding: 18px;
+  padding-top: 24px;
 }
 
 /*
