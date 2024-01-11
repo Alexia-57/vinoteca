@@ -44,3 +44,23 @@
     .card-wine-buttons a:hover {
       color: #dad6d6;
     }
+
+    .fa-heart {
+      color: rgba(203, 173, 169, 0.2);
+      font-size: 25px;
+      position: relative;
+      text-shadow: 0 0 2px #392723, 0 0 2px #392723, 0 0 2px #392723, 0 0 2px #392723;
+      margin-bottom: 10px;
+    }
+
+    .fa-heart:hover {
+      color: #74392d;
+    }
+
+    .fa-heart.filled {
+      color: #74392d;
+    }
+
+    .fa-heart.filled:hover {
+      color: #56423E
+    }

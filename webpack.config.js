@@ -6,7 +6,8 @@ module.exports = {
   devtool: "source-map",
   entry: {
     application: "./app/javascript/application.js",
-    form_validation: './app/javascript/form_validation.js'
+    form_validation: './app/javascript/form_validation.js',
+    heart_toggle: './app/javascript/heart_toggle.js'
   },
   output: {
     filename: "[name].js",

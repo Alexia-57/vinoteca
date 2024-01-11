@@ -13,11 +13,13 @@
   color: #ffffff;
   margin: 10px;
   overflow: hidden;
+  position: relative;
 }
 
 .card-index-body {
   padding: 20px;
   padding-top: 25px;
+  position: relative;
 }
 
 .card-home {
@@ -47,6 +49,7 @@
   min-width: 300px;
   max-width: 600px;
   box-sizing: border-box; /* Include padding and border in the width calculation */
+  position: relative;
 }
 
 
@@ -58,6 +61,13 @@
 .wine-details {
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.5); /* Adjust the last value (0.5) for transparency */
   padding-bottom: 15px;
+}
+
+.favorite {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  margin-bottom: 10px;
 }
 
 /*
