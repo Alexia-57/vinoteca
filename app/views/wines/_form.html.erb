@@ -4,7 +4,7 @@
   <%= f.input :country, as: :string, input_html: { class: 'empty-field' } %>
   <%= f.input :region, input_html: { class: 'empty-field' } %>
   <%= f.input :winery, input_html: { class: 'empty-field' } %>
-  <%= f.input :variety, input_html: { class: 'empty-field' } %>
+  <%= f.input :title, input_html: { class: 'empty-field' } %>
   <%= f.input :year, collection: (1990..Time.now.year).to_a.reverse, as: :select, input_html: { class: 'empty-field' } %>
   <%= f.input :quantity, collection: (1..15), as: :select, input_html: { class: 'empty-field' } %>
   <%= f.input :rating, input_html: { type: :number, step: 0.1, min: 0, max: 5, class: 'empty-field' } %>
