@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_23_084438) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_28_021638) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,7 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_23_084438) do
     t.string "wine_type"
     t.string "region"
     t.string "winery"
-    t.string "variety"
+    t.string "title"
     t.integer "year"
     t.integer "quantity"
     t.float "rating"
