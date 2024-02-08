@@ -1,16 +1,16 @@
 <div class="container">
-  <div class="description mt-5">
+  <div class="description mt-5 mb-4">
     <h2>Mes vins</h2>
   </div>
   <div class="row justify-content-center">
     <div class="col-sm-8 my-3 custom-margin-bottom">
       <div class="rounded-border-search text-center" style="border-radius: 25px;">
-        <%= form_with url: wines_path, method: :get, class: "d-flex" do %>
+        <%= form_with url: empty_wines_path, method: :get, class: "d-flex" do %>
           <div class="input-group">
             <%= text_field_tag :query, params[:query], class: "border-0 bg-white form-control", placeholder: "Rechercher...", style: "border-radius: 25px;" %>
-            <div class="input-group-append">
+            <div>
               <%= link_to wines_path(query: params[:query]), class: "border-0 bg-transparent input-group-text icon-link" do %>
-                <i class="fa-solid fa-magnifying-glass" style="position: absolute; top: 50%; transform: translateY(-50%); right: 35px;"></i>
+                <i class="fa-solid fa-magnifying-glass"></i>
               <% end %>
             </div>
           </div>
@@ -25,7 +25,12 @@
         <% unless wine.empty %>
           <a href="<%= wine_path(wine.id) %>" class="card-index">
             <div class="card-index-body">
-              <h3><%= wine.name.titleize %></h3>
+              <div class="favorite">
+                <i id="heartIcon" class="fa-solid fa-heart"></i>
+              </div>
+              <div class="title">
+                <h3><%= wine.name.titleize %></h3>
+              </div>
               <br>
               <p class="wine-details"><strong>Type de vin : </strong> <%= wine.wine_type.capitalize %></p>
               <p class="wine-details"><strong>Pays :</strong> <%= wine.country.capitalize %></p>

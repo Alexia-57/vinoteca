@@ -11,6 +11,9 @@
 @import "components/index";
 @import "pages/index";
 @import "components/cards";
+@import "components/searchbar";
+@import "components/cards";
+@import "components/buttons";
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lora&family=Open+Sans:wght@300&family=Parisienne&family=Satisfy&display=swap');
 
@@ -26,10 +29,10 @@ body {
   background-color: #3d2832;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), asset-url('background5.jpg');
   color: #e4dde3;
-  background-size: cover; /* Cover the width */
-  background-size: 100% auto; /* Maintain aspect ratio for the height */
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: center center;
   font-family: 'lora', serif;
 }
 
@@ -47,6 +50,12 @@ h3 {
   text-align: center;
   font-size: 27px;
   overflow-wrap: break-word;
+}
+
+.title {
+  padding-top: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 /*
@@ -90,7 +99,6 @@ abbr {
 .devise-text:hover {
   color: #947f7f !important;
 }
-
 
 @keyframes shake {
   0%, 100% {
